@@ -348,3 +348,7 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+WingtipToys/WingtipToys/App_Start/Startup.Auth.cs
+WingtipToys/WingtipToys/Logic/PayPalFunctions.cs
+
