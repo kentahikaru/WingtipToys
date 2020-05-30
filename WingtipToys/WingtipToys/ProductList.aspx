@@ -33,6 +33,10 @@
                                     <a href="ProductDetails.aspx?productID=<%#:Item.ProductID%>">
                                         <img src="/Catalog/Images/Thumbs/<%#:Item.ImagePath%>"
                                             width="100" height="75" style="border: solid" /></a>
+                                      <a href="<%#: GetRouteUrl("ProductByNameRoute", new {productName = Item.ProductName}) %>">
+                                    <image src='/Catalog/Images/Thumbs/<%#:Item.ImagePath%>'
+                                      width="100" height="75" border="1" />
+                                  </a>
                                 </td>
                             </tr>
                             <tr>
@@ -52,6 +56,9 @@
                                             <b>Add To Cart<b>
                                         </span>           
                                     </a>
+                                     <a href="<%#: GetRouteUrl("ProductByNameRoute", new {productName = Item.ProductName}) %>">
+                                        <%#:Item.ProductName%>
+                                      </a>
                                 </td>
                             </tr>
                             <tr>
