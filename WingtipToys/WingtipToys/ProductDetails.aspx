@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Product Details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" 
          CodeBehind="ProductDetails.aspx.cs" Inherits="WingtipToys.ProductDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:Literal runat="server" ID="ErrorMsgTextBox" /> 
     <asp:FormView ID="productDetail" runat="server" ItemType="WingtipToys.Models.Product" SelectMethod ="GetProduct" RenderOuterTable="false">
         <ItemTemplate>
             <div>

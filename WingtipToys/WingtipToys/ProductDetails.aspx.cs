@@ -13,7 +13,6 @@ namespace WingtipToys
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         public IQueryable<Product> GetProduct([QueryString("ProductID")] int? productId, [RouteData] string productName)
@@ -33,6 +32,19 @@ namespace WingtipToys
                 query = null;
             }
             return query;
+        }
+
+        private void Page_Error(object sender, EventArgs e)
+        {
+            Exception exc = Server.GetLastError();
+
+            // Handle specific exception.
+            if (exc is HttpUnhandledException)
+            {
+                ErrorMsgTextBox.Text = "An error occurred on this page. Please verify your " + "information to resolve the issue." + Environment.NewLine + exc.Message;
+            }
+            // Clear the error from the server.
+            Server.ClearError();
         }
     }
 }
